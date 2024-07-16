@@ -7,7 +7,7 @@ function App() {
   const [persons, setPersons] = useState([
     {
       id: 1,
-      name: "Pepe",
+      name: "Brian",
       role: "Frontend Developer",
       img:"https://bootdey.com/img/Content/avatar/avatar4.png"
     },

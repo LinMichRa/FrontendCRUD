@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
-const Person = ({name,role,img}) => {
+const Person = ({id, name, role, img, handleEdit, handleDelete}) => {
 
   return (
     <div className='col'>
@@ -12,8 +12,8 @@ const Person = ({name,role,img}) => {
           <p className='card-text'>{role}</p>
         </div>
         <div className='container mb-4'>
-          <button className='btn btn-success me-2'>Editar</button>
-          <button className='btn btn-danger'>Eliminar</button>
+          <button className='btn btn-success me-2'onClick={handleEdit}>Editar</button>
+          <button className='btn btn-danger' onClick={() => handleDelete(id)} data-bs-toggle="modal" data-bs-target="#deleteModal">Eliminar</button>
         </div>
       </div>
     </div>
@@ -27,6 +27,8 @@ Person.propTypes = {
   name: PropTypes.string.isRequired,
   role: PropTypes.string.isRequired,
   img: PropTypes.string.isRequired,
+  handleEdit: PropTypes.func,
+  handleDelete: PropTypes.func
 }
 
 
